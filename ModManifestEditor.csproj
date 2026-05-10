@@ -7,5 +7,17 @@
     <Nullable>enable</Nullable>
     <RootNamespace>ModManifestEditor</RootNamespace>
     <AssemblyName>ModManifestEditor</AssemblyName>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
   </PropertyGroup>
+
+  <Target Name="CopyExeToRoot" AfterTargets="Build">
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).exe" DestinationFolder="$(ProjectDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="CopyExeToRootOnPublish" AfterTargets="Publish">
+    <Copy SourceFiles="$(PublishDir)$(AssemblyName).exe" DestinationFolder="$(ProjectDir)" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

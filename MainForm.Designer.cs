@@ -109,31 +109,31 @@ partial class MainForm
         dataGridView.MultiSelect = false;
         dataGridView.AutoGenerateColumns = false;
         dataGridView.RowHeadersVisible = false;
-        dataGridView.Columns.AddRange(new DataGridViewColumn[] {
-            colName, colUUID, colModNumber, colURL
-        });
-        dataGridView.CellDoubleClick += DataGridView_CellDoubleClick;
-        dataGridView.KeyDown += DataGridView_KeyDown;
-
         // colName
         colName.HeaderText = "Name";
         colName.DataPropertyName = "Name";
-        colName.Width = 150;
+        colName.Width = 300;
 
         // colUUID
         colUUID.HeaderText = "UUID";
         colUUID.DataPropertyName = "UUID";
-        colUUID.Width = 280;
+        colUUID.Width = 400;
 
         // colModNumber
         colModNumber.HeaderText = "Version";
         colModNumber.DataPropertyName = "ModNumber";
-        colModNumber.Width = 80;
+        colModNumber.Width = 120;
 
         // colURL
         colURL.HeaderText = "URL";
         colURL.DataPropertyName = "URL";
         colURL.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        dataGridView.Columns.AddRange(new DataGridViewColumn[] {
+            colName, colUUID, colModNumber, colURL
+        });
+        dataGridView.CellDoubleClick += DataGridView_CellDoubleClick;
+        dataGridView.KeyDown += DataGridView_KeyDown;
 
         // statusStrip
         statusStrip.Items.Add(statusLabel);

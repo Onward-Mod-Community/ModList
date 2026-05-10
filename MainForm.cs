@@ -108,7 +108,8 @@ public partial class MainForm : Form
         using var dialog = new OpenFileDialog
         {
             Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
-            Title = "Open Mod Manifest"
+            Title = "Open Mod Manifest",
+            InitialDirectory = Application.StartupPath
         };
 
         if (dialog.ShowDialog() != DialogResult.OK) return;

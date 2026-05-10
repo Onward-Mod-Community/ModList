@@ -42,3 +42,4 @@ _ReSharper*/
 ## Rider
 .idea/
 *.sln.iml
+*.exe
